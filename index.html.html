@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Campamentos Infantiles · Bahía de Cádiz 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--forest:#1B4332;--forest-d:#0D2B1F;--forest-m:#2D6A4F;--gold:#C9A227;--gold-l:#E8C547;--gold-pale:rgba(201,162,39,0.15);--burgundy:#7B1F1F;--cream:#FDF5E6;--cream-d:#F0E0C0;--cream-dd:#DFC99A;--ink:#1A0F00;--ink-s:#5C4A2A;--white:#FFFDF7;--border:rgba(201,162,39,0.3)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Instrument Sans',sans-serif;background:var(--cream);color:var(--ink);display:flex;flex-direction:column}
+header{background:linear-gradient(135deg,var(--forest-d) 0%,var(--forest) 100%);padding:0 1.5rem;height:64px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;z-index:10;border-bottom:2px solid var(--gold);position:relative}
+header::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-l),transparent)}
+.logo{display:flex;align-items:center;gap:.85rem}
+.logo-badge{width:40px;height:40px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-l) 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.3)}
+.logo-name{font-family:'Cinzel',serif;font-size:.9rem;font-weight:600;color:var(--cream);letter-spacing:.05em}
+.logo-sub{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.header-motto{font-family:'Cinzel',serif;font-size:.75rem;font-weight:600;color:var(--gold-l);letter-spacing:.08em;border:1px solid rgba(201,162,39,0.4);padding:.3rem .8rem;border-radius:4px;background:rgba(201,162,39,0.08);text-align:center;line-height:1.3}
+.header-motto span{display:block;font-size:.6rem;color:rgba(240,224,192,0.7);font-family:'EB Garamond',serif;font-style:italic;font-weight:400}
+.app{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.home-screen{flex:1;display:flex;flex-direction:column;overflow:hidden}
+.home-top{background:linear-gradient(160deg,var(--forest-d) 0%,var(--forest) 60%,#2D6A4F 100%);padding:2rem 1.75rem 4rem;position:relative;overflow:hidden}
+.home-top::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A227' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.home-top::after{content:'';position:absolute;bottom:-2px;left:-5%;right:-5%;height:60px;background:var(--cream);border-radius:50% 50% 0 0/40px 40px 0 0}
+.hero-content{position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(201,162,39,0.2);border:1px solid rgba(201,162,39,0.5);color:var(--gold-l);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;font-family:'Cinzel',serif;font-weight:600;padding:.35rem 1rem;border-radius:2px;margin-bottom:1rem}
+.hero-title{font-family:'Cinzel Decorative',serif;font-size:clamp(1.4rem,5vw,2.4rem);color:var(--gold-l);font-weight:700;line-height:1.1;letter-spacing:.03em;text-shadow:0 2px 12px rgba(0,0,0,0.4);margin-bottom:.4rem}
+.hero-verse{font-family:'EB Garamond',serif;font-size:1rem;font-style:italic;color:rgba(240,224,192,0.8);margin-bottom:.35rem}
+.hero-camp{font-size:.78rem;color:rgba(240,224,192,0.55);letter-spacing:.06em;text-transform:uppercase}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;padding:1.25rem 1.25rem .75rem;align-content:start}
+.nav-card{background:var(--white);border-radius:12px;padding:1.25rem;cursor:pointer;border:1.5px solid var(--border);transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;user-select:none;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.nav-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-l));opacity:0;transition:opacity .2s}
+.nav-card:active{transform:scale(.96)}
+.nav-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,162,39,0.2)}
+.nav-card:hover::before{opacity:1}
+.card-icon{width:46px;height:46px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:.85rem;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-m) 100%)}
+.card-label{font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-s);margin-bottom:.25rem}
+.card-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;line-height:1.2;color:var(--ink)}
+.card-arrow{position:absolute;bottom:1rem;right:1rem;width:26px;height:26px;background:var(--cream-d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:all .2s}
+.nav-card:hover .card-arrow{background:var(--gold);color:var(--forest-d)}
+.news-ticker{margin:.25rem 1.25rem 1.25rem;background:linear-gradient(135deg,var(--forest-d) 0%,var(--forest) 100%);border-radius:8px;padding:.8rem 1.1rem;display:flex;align-items:center;gap:.75rem;cursor:pointer;border:1px solid var(--border)}
+.ticker-dot{width:7px;height:7px;background:var(--gold-l);border-radius:50%;flex-shrink:0;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.ticker-text{font-size:.8rem;color:rgba(240,224,192,.85);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:'EB Garamond',serif;font-style:italic}
+.ticker-badge{background:var(--burgundy);color:var(--cream-d);font-size:.6rem;font-weight:600;padding:.2rem .55rem;border-radius:3px;flex-shrink:0;font-family:'Cinzel',serif;letter-spacing:.05em}
+.panel{position:fixed;inset:64px 0 0 0;background:var(--cream);z-index:50;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow:hidden}
+.panel.open{transform:translateX(0)}
+.panel-header{background:linear-gradient(135deg,var(--forest-d) 0%,var(--forest) 100%);padding:.9rem 1.25rem;display:flex;align-items:center;gap:.9rem;flex-shrink:0;border-bottom:2px solid var(--gold)}
+.btn-back{width:34px;height:34px;background:rgba(201,162,39,0.15);border:1px solid rgba(201,162,39,0.4);border-radius:6px;cursor:pointer;font-size:.95rem;flex-shrink:0;color:var(--gold-l)}
+.panel-title{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--cream);letter-spacing:.04em}
+.panel-body{flex:1;overflow-y:auto;padding:1.25rem;-webkit-overflow-scrolling:touch}
+.field-section{background:var(--white);border-radius:10px;padding:1.1rem;margin-bottom:.85rem;border:1px solid var(--border)}
+.field-section-title{font-family:'Cinzel',serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.65rem}
+.field:last-child{margin-bottom:0}
+.field label{font-size:.72rem;font-weight:600;color:var(--ink-s);letter-spacing:.02em}
+.req{color:var(--burgundy)}
+.field input,.field select,.field textarea{padding:.6rem .85rem;border:1.5px solid var(--cream-d);border-radius:7px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--forest);background:var(--white)}
+.field textarea{resize:vertical;min-height:70px}
+.consent-box{display:flex;align-items:flex-start;gap:.7rem;background:rgba(27,67,50,0.05);border:1.5px solid rgba(27,67,50,0.15);padding:.9rem;border-radius:8px;margin-bottom:.65rem}
+.consent-box input[type=checkbox]{width:17px;height:17px;flex-shrink:0;margin-top:1px;accent-color:var(--forest)}
+.consent-box label{font-size:.78rem;color:var(--ink-s);line-height:1.55;cursor:pointer}
+.btn-submit-main{width:100%;padding:.95rem;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-d) 100%);color:var(--gold-l);border:none;border-radius:8px;font-family:'Cinzel',serif;font-size:.9rem;font-weight:600;cursor:pointer;margin-top:.5rem;letter-spacing:.06em;box-shadow:0 4px 15px rgba(27,67,50,0.3)}
+.btn-submit-main:disabled{opacity:.6;cursor:not-allowed}
+.success-screen{display:none;text-align:center;padding:3rem 1.5rem}
+.success-icon-big{font-size:4rem;margin-bottom:1rem}
+.success-screen h3{font-family:'Cinzel',serif;font-size:1.3rem;color:var(--forest);margin-bottom:.75rem}
+.success-screen p{color:var(--ink-s);line-height:1.7;font-size:.9rem}
+.doc-list{display:flex;flex-direction:column;gap:.65rem}
+.doc-item{background:var(--white);border-radius:10px;padding:1rem 1.1rem;display:flex;align-items:center;gap:.9rem;color:var(--ink);border:1.5px solid var(--border);transition:all .2s;width:100%;text-align:left;cursor:pointer;font-family:inherit}
+.doc-item:hover{border-color:var(--gold);transform:translateX(4px);box-shadow:0 4px 14px rgba(201,162,39,0.15)}
+.doc-thumb{width:42px;height:42px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-m) 100%)}
+.doc-info{flex:1}
+.doc-info h4{font-family:'Cinzel',serif;font-size:.82rem;font-weight:600;margin-bottom:.15rem;color:var(--forest-d)}
+.doc-info span{font-size:.72rem;color:var(--ink-s)}
+.doc-dl{width:30px;height:30px;background:var(--cream-d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;transition:all .2s}
+.doc-item:hover .doc-dl{background:var(--gold);color:var(--forest-d)}
+.doc-section-label{font-family:'Cinzel',serif;font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-s);margin:1.1rem 0 .55rem}
+.news-list{display:flex;flex-direction:column;gap:.7rem}
+.news-item{background:var(--white);border-radius:10px;padding:1.1rem;border:1.5px solid var(--border);border-left:3px solid var(--forest)}
+.news-item-date{font-size:.7rem;color:var(--ink-s);margin-bottom:.35rem;font-style:italic;font-family:'EB Garamond',serif}
+.news-item-title{font-family:'Cinzel',serif;font-size:.95rem;font-weight:600;margin-bottom:.45rem;color:var(--forest-d)}
+.news-item-body{font-family:'EB Garamond',serif;font-size:.95rem;color:var(--ink-s);line-height:1.65}
+.contact-card{background:var(--white);border-radius:10px;padding:1.1rem;display:flex;align-items:center;gap:.9rem;margin-bottom:.65rem;text-decoration:none;color:var(--ink);border:1.5px solid var(--border);transition:all .2s}
+.contact-card:hover{border-color:var(--gold);transform:translateX(4px)}
+.contact-card-icon{width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-m) 100%);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.contact-card-info h4{font-family:'Cinzel',serif;font-size:.68rem;color:var(--ink-s);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.2rem}
+.contact-card-info p{font-size:.9rem;font-weight:500;color:var(--ink)}
+.map-embed{width:100%;height:200px;border-radius:10px;overflow:hidden;margin-top:1rem;border:1.5px solid var(--border)}
+.map-embed iframe{width:100%;height:100%;border:none}
+.turno-card{background:var(--white);border-radius:10px;overflow:hidden;margin-bottom:.7rem;border:1.5px solid var(--border)}
+.turno-head{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-d) 100%);padding:.9rem 1.1rem;color:var(--cream)}
+.turno-head .t-num{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.turno-head h3{font-family:'Cinzel',serif;font-size:1rem;font-weight:600;color:var(--gold-l)}
+.turno-head .t-dates{font-size:.75rem;opacity:.75;margin-top:.15rem;font-family:'EB Garamond',serif;font-style:italic}
+.turno-body{padding:.65rem 1.1rem}
+.t-row{display:flex;gap:.75rem;padding:.45rem 0;border-bottom:1px solid var(--cream-d);font-size:.82rem}
+.t-row:last-child{border-bottom:none}
+.t-row .t-time{min-width:48px;font-size:.72rem;font-weight:600;color:var(--forest)}
+.admin-btn{position:fixed;bottom:18px;right:18px;z-index:200;width:42px;height:42px;background:var(--forest-d);border:2px solid var(--gold);border-radius:50%;color:var(--gold);font-size:1rem;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.admin-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(13,43,31,.7);backdrop-filter:blur(6px);align-items:flex-end;justify-content:center}
+.admin-overlay.open{display:flex}
+.admin-sheet{background:var(--white);border-radius:14px 14px 0 0;padding:2rem;width:100%;max-width:520px;max-height:85vh;overflow-y:auto;border-top:3px solid var(--gold)}
+.sheet-handle{width:36px;height:4px;background:var(--cream-dd);border-radius:2px;margin:0 auto 1.5rem}
+.admin-sheet h2{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:600;margin-bottom:1.25rem;color:var(--forest-d)}
+.admin-field{margin-bottom:.75rem}
+.admin-field input,.admin-field textarea,.admin-field select{width:100%;padding:.65rem .9rem;border:1.5px solid var(--cream-d);border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;background:var(--cream);outline:none}
+.btn-pub{width:100%;padding:.85rem;background:linear-gradient(135deg,var(--forest) 0%,var(--forest-d) 100%);color:var(--gold-l);border:none;border-radius:8px;font-family:'Cinzel',serif;font-size:.88rem;font-weight:600;cursor:pointer;letter-spacing:.04em}
+.admin-sep{border:none;border-top:1px solid var(--cream-d);margin:1.25rem 0}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(201,162,39,.3);border-top-color:var(--gold-l);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:.4rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .5s ease both}
+.fade-in-2{animation:fadeIn .5s .1s ease both}
+.fade-in-3{animation:fadeIn .5s .2s ease both}
+.fade-in-4{animation:fadeIn .5s .3s ease both}
+.fade-in-5{animation:fadeIn .5s .4s ease both}
+@media(max-width:640px){.field-row{grid-template-columns:1fr!important}.panel-body{padding:1rem!important}.field input,.field select,.field textarea{font-size:16px}.header-motto{display:none}}
+@media(min-width:960px){html,body{overflow:auto;height:auto}.app{overflow:visible;height:auto;flex:none}.home-screen{display:block;overflow:visible;height:auto;min-height:calc(100vh - 64px)}.home-top{padding:4rem 6rem 7rem}.hero-title{font-size:3rem}.card-grid{grid-template-columns:repeat(4,1fr);max-width:1200px;margin:-4rem auto 0;padding:0 4rem 2rem;position:relative;z-index:2}.nav-card{padding:1.75rem}.news-ticker{max-width:1200px;margin:0 auto 2rem;padding-left:4rem;padding-right:4rem}.panel{position:fixed;top:64px;left:0;right:0;bottom:0;width:100%;transform:translateX(100%)}.panel.open{transform:translateX(0)}.panel-body{padding:2.5rem 4rem;max-width:960px;margin:0 auto;width:100%}.field-row{grid-template-columns:1fr 1fr}.doc-list{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-badge">&#127958;</div>
+    <div>
+      <div class="logo-name">Campamentos Infantiles</div>
+      <div class="logo-sub">Bahia de Cadiz &middot; 2026</div>
+    </div>
+  </div>
+  <div class="header-motto">VENGA TU REINO<span>Mateo 6:10</span></div>
+</header>
+
+<div class="app">
+  <div class="home-screen">
+    <div class="home-top">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">&#127956; Verano 2026 &middot; Bahia de Cadiz</div>
+        <div class="hero-title fade-in-2">Venga tu Reino</div>
+        <div class="hero-verse fade-in-3">&ldquo;Venga tu reino, hagase tu voluntad...&rdquo; &mdash; Mateo 6:10</div>
+        <div class="hero-camp fade-in-3">Campamentos Infantiles Bahia de Cadiz &middot; Desde 1989</div>
+      </div>
+    </div>
+    <div class="card-grid">
+      <div class="nav-card fade-in-2" onclick="openPanel('panelInscripcion')">
+        <div class="card-icon">&#128221;</div>
+        <div class="card-label">Formulario</div>
+        <div class="card-title">Inscribir a mi hijo/a</div>
+        <div class="card-arrow">&#8594;</div>
+      </div>
+      <div class="nav-card fade-in-3" onclick="openPanel('panelDocs')">
+        <div class="card-icon">&#128196;</div>
+        <div class="card-label">Descarga</div>
+        <div class="card-title">Documentos y autorizaciones</div>
+        <div class="card-arrow">&#8594;</div>
+      </div>
+      <div class="nav-card fade-in-4" onclick="openPanel('panelNovedades')">
+        <div class="card-icon">&#128226;</div>
+        <div class="card-label">Actualidad</div>
+        <div class="card-title">Novedades e informacion</div>
+        <div class="card-arrow">&#8594;</div>
+      </div>
+      <div class="nav-card fade-in-5" onclick="openPanel('panelContacto')">
+        <div class="card-icon">&#128222;</div>
+        <div class="card-label">Habla con nosotros</div>
+        <div class="card-title">Contacto y ubicacion</div>
+        <div class="card-arrow">&#8594;</div>
+      </div>
+    </div>
+    <div class="news-ticker" onclick="openPanel('panelNovedades')">
+      <div class="ticker-dot"></div>
+      <div class="ticker-text" id="tickerText">Inscripciones abiertas para el campamento Venga tu Reino 2026</div>
+      <div class="ticker-badge">NUEVO</div>
+    </div>
+  </div>
+
+  <!-- INSCRIPCION -->
+  <div class="panel" id="panelInscripcion">
+    <div class="panel-header">
+      <button class="btn-back" onclick="closePanel('panelInscripcion')">&#8592;</button>
+      <div class="panel-title">&#128221; Inscripcion</div>
+    </div>
+    <div class="panel-body">
+      <div id="formSuccess" class="success-screen">
+        <div class="success-icon-big">&#127881;</div>
+        <h3>Inscripcion enviada</h3>
+        <p>Hemos recibido todos los datos. Nos pondremos en contacto para confirmar la plaza.</p>
+      </div>
+      <form id="inscForm">
+        <div class="field-section">
+          <div class="field-section-title">Datos del participante</div>
+          <div class="field-row">
+            <div class="field"><label>Nombre <span class="req">*</span></label><input type="text" name="nombre" required placeholder="Nombre"/></div>
+            <div class="field"><label>Apellidos <span class="req">*</span></label><input type="text" name="apellidos" required placeholder="Apellidos"/></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Fecha de nacimiento <span class="req">*</span></label><input type="date" name="fecha_nac" required/></div>
+            <div class="field"><label>DNI / NIE</label><input type="text" name="dni_menor" placeholder="Opcional"/></div>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Asistencia y alojamiento</div>
+          <div class="field">
+            <label>Modalidad <span class="req">*</span></label>
+            <select name="modalidad" required onchange="toggleDias(this.value)">
+              <option value="">Selecciona una opcion</option>
+              <option value="Alojamiento completo 21-24 julio">Alojamiento completo (Martes 21 al Viernes 24)</option>
+              <option value="Diurno dias sueltos">Diurno - dias sueltos (sin pernocta)</option>
+              <option value="Mixto o personalizado">Mixto o personalizado (especificar abajo)</option>
+            </select>
+          </div>
+          <div id="diasSueltos" style="display:none;margin-bottom:.65rem">
+            <label style="font-size:.72rem;font-weight:600;color:var(--ink-s);display:block;margin-bottom:.5rem">Dias de asistencia <span class="req">*</span></label>
+            <div style="display:flex;flex-direction:column;gap:.5rem;background:var(--cream);border:1.5px solid var(--cream-d);border-radius:8px;padding:.85rem">
+              <label style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer"><input type="checkbox" name="dia_martes" value="Martes 21" style="width:16px;height:16px;accent-color:var(--forest)"/> Martes 21 de julio</label>
+              <label style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer"><input type="checkbox" name="dia_miercoles" value="Miercoles 22" style="width:16px;height:16px;accent-color:var(--forest)"/> Miercoles 22 de julio</label>
+              <label style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer"><input type="checkbox" name="dia_jueves" value="Jueves 23" style="width:16px;height:16px;accent-color:var(--forest)"/> Jueves 23 de julio</label>
+              <label style="display:flex;align-items:center;gap:.6rem;font-size:.85rem;cursor:pointer"><input type="checkbox" name="dia_viernes" value="Viernes 24" style="width:16px;height:16px;accent-color:var(--forest)"/> Viernes 24 de julio</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Aclaraciones o situacion especial</label>
+            <textarea name="aclaracion_asistencia" placeholder="Ej: llega el miercoles 22, se va el jueves 23, combinacion internado y dias sueltos..."></textarea>
+          </div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Informacion medica</div>
+          <div class="field">
+            <label>Telefono de contacto directo <span class="req">*</span></label>
+            <input type="tel" name="tel_contacto_directo" required placeholder="Telefono urgente para los monitores"/>
+          </div>
+          <div class="field"><label>Alergias o intolerancias alimentarias</label><textarea name="alergias" placeholder="Describe alergias o escribe Ninguna"></textarea></div>
+          <div class="field"><label>Enfermedades cronicas o condiciones de salud</label><textarea name="enfermedades" placeholder="Asma, diabetes, epilepsia, etc. o Ninguna"></textarea></div>
+          <div class="field"><label>Medicacion habitual</label><input type="text" name="medicacion" placeholder="Nombre del medicamento y dosis"/></div>
+          <div class="field"><label>Otras observaciones medicas</label><textarea name="obs_medicas" placeholder="Cualquier informacion relevante para los monitores"></textarea></div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Datos de la familia</div>
+          <div class="field-row">
+            <div class="field"><label>Tutor 1 Nombre <span class="req">*</span></label><input type="text" name="tutor1_nombre" required placeholder="Nombre completo"/></div>
+            <div class="field"><label>Tutor 1 DNI <span class="req">*</span></label><input type="text" name="tutor1_dni" required placeholder="12345678A"/></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Telefono tutor 1 <span class="req">*</span></label><input type="tel" name="tutor1_tel" required placeholder="600 000 000"/></div>
+            <div class="field"><label>Email tutor 1 <span class="req">*</span></label><input type="email" name="tutor1_email" required placeholder="email@ejemplo.com"/></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label>Tutor 2 Nombre</label><input type="text" name="tutor2_nombre" placeholder="Nombre completo"/></div>
+            <div class="field"><label>Tutor 2 Telefono</label><input type="tel" name="tutor2_tel" placeholder="600 000 000"/></div>
+          </div>
+          <div class="field"><label>Direccion postal</label><input type="text" name="direccion" placeholder="Calle, numero, CP, localidad"/></div>
+        </div>
+
+        <div class="field-section">
+          <div class="field-section-title">Autorizaciones</div>
+          <div class="consent-box">
+            <input type="checkbox" id="aut1" name="aut_actividades" value="Si" required/>
+            <label for="aut1">Autorizo la participacion de mi hijo/a en todas las actividades del programa, incluidas acuaticas, deportivas y excursiones supervisadas. <span class="req">*</span></label>
+          </div>
+          <div class="consent-box">
+            <input type="checkbox" id="aut2" name="aut_imagen" value="Si"/>
+            <label for="aut2">Autorizo el uso de fotografias y videos de mi hijo/a para uso exclusivo del campamento.</label>
+          </div>
+          <div class="consent-box">
+            <input type="checkbox" id="aut3" name="aut_rgpd" value="Si" required/>
+            <label for="aut3">He firmado el documento de cesion de datos RGPD y acepto el tratamiento de los datos. <span class="req">*</span></label>
+          </div>
+        </div>
+        <button type="submit" class="btn-submit-main" id="btnSubmit">Enviar inscripcion</button>
+        <p style="font-size:.72rem;color:var(--ink-s);text-align:center;margin-top:.75rem;font-style:italic;font-family:'EB Garamond',serif">Los datos se guardan de forma privada. Solo el equipo del campamento tiene acceso.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- DOCUMENTOS -->
+  <div class="panel" id="panelDocs">
+    <div class="panel-header">
+      <button class="btn-back" onclick="closePanel('panelDocs')">&#8592;</button>
+      <div class="panel-title">&#128196; Documentos</div>
+    </div>
+    <div class="panel-body">
+      <div style="background:var(--gold-pale);border:1.5px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:1.1rem;font-family:'EB Garamond',serif;font-size:.95rem;color:var(--ink-s);line-height:1.6">
+        <strong style="font-family:'Cinzel',serif;font-size:.78rem;color:var(--forest)">Como usarlos:</strong> Pulsa para abrir, imprime o guarda como PDF, rellena a mano, firma y entrega el primer dia.
+      </div>
+      <div class="doc-section-label">Obligatorios &mdash; Descargar, firmar y entregar</div>
+      <div class="doc-list">
+        <button type="button" class="doc-item" onclick="generarDoc('rgpd')">
+          <div class="doc-thumb">&#128274;</div>
+          <div class="doc-info"><h4>Cesion y proteccion de datos (RGPD)</h4><span>Obligatorio &middot; Consentimiento datos personales</span></div>
+          <div class="doc-dl">&#11015;</div>
+        </button>
+        <button type="button" class="doc-item" onclick="generarDoc('medica')">
+          <div class="doc-thumb">&#128138;</div>
+          <div class="doc-info"><h4>Autorizacion medica</h4><span>Obligatorio &middot; Medicamentos y atencion sanitaria</span></div>
+          <div class="doc-dl">&#11015;</div>
+        </button>
+        <button type="button" class="doc-item" onclick="generarDoc('actividades')">
+          <div class="doc-thumb">&#127944;</div>
+          <div class="doc-info"><h4>Autorizacion de actividades</h4><span>Obligatorio &middot; Banos, excursiones y aire libre</span></div>
+          <div class="doc-dl">&#11015;</div>
+        </button>
+        <button type="button" class="doc-item" onclick="generarDoc('normas')">
+          <div class="doc-thumb">&#128218;</div>
+          <div class="doc-info"><h4>Normas del campamento</h4><span>Leer y firmar &middot; Compromiso de convivencia</span></div>
+          <div class="doc-dl">&#11015;</div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOVEDADES -->
+  <div class="panel" id="panelNovedades">
+    <div class="panel-header">
+      <button class="btn-back" onclick="closePanel('panelNovedades')">&#8592;</button>
+      <div class="panel-title">&#128226; Novedades</div>
+    </div>
+    <div class="panel-body">
+      <div class="news-list" id="newsList"></div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <div class="panel" id="panelContacto">
+    <div class="panel-header">
+      <button class="btn-back" onclick="closePanel('panelContacto')">&#8592;</button>
+      <div class="panel-title">&#128222; Contacto</div>
+    </div>
+    <div class="panel-body">
+      <a href="tel:+34654636331" class="contact-card">
+        <div class="contact-card-icon">&#128222;</div>
+        <div class="contact-card-info"><h4>Telefono</h4><p>654 636 331</p></div>
+      </a>
+      <a href="https://wa.me/34654636331" target="_blank" class="contact-card">
+        <div class="contact-card-icon">&#128172;</div>
+        <div class="contact-card-info"><h4>WhatsApp</h4><p>654 636 331</p></div>
+      </a>
+      <a href="mailto:hola@campamentobahiacadiz.es" class="contact-card">
+        <div class="contact-card-icon">&#9993;</div>
+        <div class="contact-card-info"><h4>Email</h4><p>hola@campamentobahiacadiz.es</p></div>
+      </a>
+      <a href="#" class="contact-card">
+        <div class="contact-card-icon">&#128205;</div>
+        <div class="contact-card-info"><h4>Ubicacion</h4><p>Bahia de Cadiz, Cadiz</p></div>
+      </a>
+      <a href="#" class="contact-card">
+        <div class="contact-card-icon">&#128336;</div>
+        <div class="contact-card-info"><h4>Horario</h4><p>Lun a Vie &middot; 9:00 a 18:00 h</p></div>
+      </a>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3!2d-6.2890!3d36.5150!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd1e2c2a80789%3A0x400a89ee4003650!2sBahia+de+Cadiz!5e0!3m2!1ses!2ses!4v1" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="margin-top:1.25rem">
+        <div class="doc-section-label">Programa 2026</div>
+        <div class="turno-card">
+          <div class="turno-head">
+            <div class="t-num">Campamento</div>
+            <h3>Venga tu Reino</h3>
+            <div class="t-dates">21 al 24 de julio de 2026</div>
+          </div>
+          <div class="turno-body">
+            <div class="t-row"><span class="t-time">9:00</span><span>Desayuno y bienvenida del dia</span></div>
+            <div class="t-row"><span class="t-time">10:00</span><span>Actividades deportivas y acuaticas</span></div>
+            <div class="t-row"><span class="t-time">13:00</span><span>Almuerzo y tiempo libre</span></div>
+            <div class="t-row"><span class="t-time">16:00</span><span>Talleres creativos y manualidades</span></div>
+            <div class="t-row"><span class="t-time">18:00</span><span>Multideporte y juegos de equipo</span></div>
+            <div class="t-row"><span class="t-time">21:00</span><span>Velada tematica nocturna</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="admin-btn" onclick="openAdmin()">&#9881;</button>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-sheet" onclick="event.stopPropagation()">
+    <div class="sheet-handle"></div>
+    <h2>Publicar novedades</h2>
+    <div id="adminLogin">
+      <div class="admin-field"><input type="password" id="adminPass" placeholder="Contrasena"/></div>
+      <button class="btn-pub" onclick="checkAdmin()">Entrar</button>
+      <p id="adminErr" style="color:var(--burgundy);font-size:.8rem;margin-top:.5rem;display:none">Contrasena incorrecta</p>
+    </div>
+    <div id="adminContent" style="display:none">
+      <div class="admin-field"><input type="text" id="nTitle" placeholder="Titulo de la novedad"/></div>
+      <div class="admin-field"><textarea id="nBody" placeholder="Texto..." style="width:100%;padding:.65rem .9rem;border:1.5px solid var(--cream-d);border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;background:var(--cream);outline:none;resize:vertical;min-height:80px"></textarea></div>
+      <div class="admin-field"><input type="text" id="nEmoji" value="📢" placeholder="Emoji"/></div>
+      <button class="btn-pub" onclick="publishNews()">Publicar novedad</button>
+      <hr class="admin-sep"/>
+      <div id="adminList"></div>
+      <button onclick="closeAdmin()" style="width:100%;margin-top:1rem;padding:.75rem;background:var(--cream-d);border:none;border-radius:8px;font-family:'Instrument Sans',sans-serif;font-size:.88rem;cursor:pointer;color:var(--ink-s)">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz0bd6gtMIlOcWouHwdF7fYIscgFk2SqW2SeEwxoPNSxFfglZ2XDJgyyOBe9yqyAw47/exec';
+var PASS = 'admin2025';
+var BASE_NEWS = [
+  {id:'b1',emoji:'🏕️',title:'Campamento Venga tu Reino 2026',body:'El campamento de este verano tendra como lema "Venga tu Reino" basado en Mateo 6:10. Del 21 al 24 de julio. Plazas limitadas.',date:'Marzo 2026'},
+  {id:'b2',emoji:'📄',title:'Documentos disponibles',body:'Toda la documentacion necesaria ya esta en la seccion Documentos. El RGPD es obligatorio antes de la llegada.',date:'Marzo 2026'},
+  {id:'b3',emoji:'📞',title:'Contacto: 654 636 331',body:'Para cualquier duda puedes llamarnos o escribirnos por WhatsApp al 654 636 331.',date:'Marzo 2026'}
+];
+
+function openPanel(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePanel(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function toggleDias(val) {
+  document.getElementById('diasSueltos').style.display = (val === 'Diurno dias sueltos') ? 'block' : 'none';
+}
+
+function getNews() {
+  try { return JSON.parse(localStorage.getItem('news26') || '[]'); } catch(e) { return []; }
+}
+
+function saveNews(arr) {
+  localStorage.setItem('news26', JSON.stringify(arr));
+}
+
+function renderNews() {
+  var stored = getNews().slice().reverse();
+  var all = stored.concat(BASE_NEWS);
+  var html = '';
+  for (var i = 0; i < all.length; i++) {
+    var n = all[i];
+    html += '<div class="news-item"><div class="news-item-date">' + n.emoji + ' ' + n.date + '</div>';
+    html += '<div class="news-item-title">' + n.title + '</div>';
+    html += '<div class="news-item-body">' + n.body + '</div></div>';
+  }
+  document.getElementById('newsList').innerHTML = html;
+  if (all.length > 0) document.getElementById('tickerText').textContent = all[0].title;
+}
+
+function renderAdminList() {
+  var stored = getNews();
+  var list = document.getElementById('adminList');
+  if (stored.length === 0) { list.innerHTML = '<p style="font-size:.8rem;color:var(--ink-s)">Sin novedades publicadas.</p>'; return; }
+  var html = '';
+  for (var i = 0; i < stored.length; i++) {
+    var n = stored[i];
+    html += '<div style="display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem;background:var(--cream);border-radius:8px;margin-bottom:.5rem">';
+    html += '<div style="font-size:.8rem"><strong>' + n.emoji + ' ' + n.title + '</strong><br><span style="font-size:.72rem;color:var(--ink-s)">' + n.date + '</span></div>';
+    html += '<button data-id="' + n.id + '" onclick="deleteNews(this.getAttribute(\'data-id\'))" style="background:none;border:none;cursor:pointer;color:var(--burgundy);font-size:1rem">&#128465;</button></div>';
+  }
+  list.innerHTML = html;
+}
+
+function publishNews() {
+  var title = document.getElementById('nTitle').value.trim();
+  var body = document.getElementById('nBody').value.trim();
+  var emoji = document.getElementById('nEmoji').value.trim() || '📢';
+  if (!title || !body) { alert('Rellena el titulo y el contenido.'); return; }
+  var arr = getNews();
+  arr.push({ id: 'u_' + Date.now(), emoji: emoji, title: title, body: body, date: new Date().toLocaleDateString('es-ES', {day:'numeric', month:'long', year:'numeric'}) });
+  saveNews(arr);
+  document.getElementById('nTitle').value = '';
+  document.getElementById('nBody').value = '';
+  renderNews();
+  renderAdminList();
+  alert('Novedad publicada.');
+}
+
+function deleteNews(id) {
+  if (!confirm('Eliminar esta novedad?')) return;
+  saveNews(getNews().filter(function(n) { return n.id !== id; }));
+  renderNews();
+  renderAdminList();
+}
+
+function openAdmin() {
+  document.getElementById('adminOverlay').classList.add('open');
+  setTimeout(function() { document.getElementById('adminPass').focus(); }, 200);
+}
+
+function closeAdmin() {
+  document.getElementById('adminOverlay').classList.remove('open');
+  document.getElementById('adminPass').value = '';
+  document.getElementById('adminErr').style.display = 'none';
+  document.getElementById('adminLogin').style.display = 'block';
+  document.getElementById('adminContent').style.display = 'none';
+}
+
+function checkAdmin() {
+  if (document.getElementById('adminPass').value === PASS) {
+    document.getElementById('adminLogin').style.display = 'none';
+    document.getElementById('adminContent').style.display = 'block';
+    renderAdminList();
+  } else {
+    document.getElementById('adminErr').style.display = 'block';
+  }
+}
+
+document.getElementById('adminOverlay').addEventListener('click', closeAdmin);
+document.getElementById('adminPass').addEventListener('keydown', function(e) { if (e.key === 'Enter') checkAdmin(); });
+
+document.getElementById('inscForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var btn = document.getElementById('btnSubmit');
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  var fd = new FormData(this);
+  var data = {};
+  fd.forEach(function(v, k) { data[k] = v; });
+  data['fecha_envio'] = new Date().toLocaleString('es-ES');
+  data['campamento'] = 'Venga tu Reino 2026';
+  fetch(SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(data)
+  }).then(function() {
+    document.getElementById('inscForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'Enviar inscripcion';
+    alert('Error al enviar. Llamanos al 654 636 331.');
+  });
+});
+
+function generarDoc(tipo) {
+  var titulos = {
+    rgpd: 'CESION Y PROTECCION DE DATOS (RGPD)',
+    medica: 'AUTORIZACION MEDICA Y SANITARIA',
+    actividades: 'AUTORIZACION DE ACTIVIDADES',
+    normas: 'NORMAS DE CONVIVENCIA'
+  };
+  var subtitulo = 'Campamento Infantil "Venga tu Reino" - 21 al 24 de julio de 2026';
+
+  var cuerpos = {};
+
+  cuerpos['rgpd'] = '<div class=\"marco-legal\"><strong>Marco normativo:</strong> Reglamento (UE) 2016/679, de 27 de abril de 2016 (RGPD) &middot; Ley Organica 3/2018, de 5 de diciembre, de Proteccion de Datos Personales (LOPDGDD) &middot; Art. 9.2.d RGPD: tratamiento por entidades sin animo de lucro en el ambito de sus actividades. Agencia Espanola de Proteccion de Datos: www.aepd.es</div>'
+    + '<h3>RESPONSABLE DEL TRATAMIENTO</h3>'
+    + '<p><strong>Entidad:</strong> Campamentos Infantiles Bahia de Cadiz &nbsp;|&nbsp; <strong>Contacto:</strong> 654 636 331</p>'
+    + '<p><strong>Finalidad:</strong> Gestion y organizacion del campamento infantil "Venga tu Reino 2026"</p>'
+    + '<h3>DATOS QUE SE RECOGEN</h3>'
+    + '<p>Datos de identificacion del menor (nombre, apellidos, fecha de nacimiento, DNI/NIE), datos de salud necesarios para su atencion (alergias, enfermedades, medicacion) y datos de contacto de los tutores legales.</p>'
+    + '<h3>FINALIDAD Y BASE LEGAL</h3>'
+    + '<p>Los datos se trataran exclusivamente para la gestion del campamento y comunicacion con las familias. Base legal: consentimiento expreso del tutor legal (Art. 6.1.a y Art. 9.2.a RGPD), en ejercicio de las actividades de la entidad sin animo de lucro (Art. 9.2.d RGPD).</p>'
+    + '<h3>CONSERVACION</h3>'
+    + '<p>Los datos se eliminaran transcurrido un (1) ano desde la finalizacion del campamento, salvo obligacion legal en contrario (Art. 5.1.e RGPD - principio de limitacion del plazo de conservacion).</p>'
+    + '<h3>DERECHOS</h3>'
+    + '<p>Conforme a los Arts. 15 a 22 del RGPD y Arts. 12 a 18 de la LOPDGDD, puede ejercer los derechos de acceso, rectificacion, supresion, limitacion, portabilidad y oposicion dirigiendose al 654 636 331. Tiene derecho a presentar reclamacion ante la Agencia Espanola de Proteccion de Datos (www.aepd.es).</p>'
+    + '<h3>CESION A TERCEROS</h3>'
+    + '<p>Los datos no seran cedidos a terceros salvo obligacion legal (Art. 6.1.c RGPD). No se realizaran transferencias internacionales de datos fuera del Espacio Economico Europeo (Art. 44 RGPD).</p>'
+    + '<div class="firma-bloque"><p>D./Dna. ________________________________, con DNI _____________, en calidad de tutor/a legal del menor ________________________________, <strong>CONSIENTE EXPRESAMENTE</strong> el tratamiento de sus datos conforme a lo indicado.</p>'
+    + '<div class="firma-lineas"><div class="firma-col"><p>Lugar y fecha: _____________________</p><p style="margin-top:2rem">Firma del tutor/a legal:</p><div class="firma-espacio"></div></div></div></div>';
+
+  cuerpos['medica'] = '<div class=\"marco-legal\"><strong>Marco normativo:</strong> Ley 41/2002, de 14 de noviembre, reguladora de la autonomia del paciente (Art. 9, consentimiento por representacion en menores de edad) &middot; Ley Organica 1/1996, de 15 de enero, de Proteccion Juridica del Menor, Art. 2 (interes superior del menor) &middot; Art. 9.2.h RGPD (tratamiento de datos de salud en el ambito de la asistencia sanitaria y social).</div>'
+    + '<h3>DATOS DEL MENOR</h3>'
+    + '<table class="doc-table"><tr><td>Nombre y apellidos:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Fecha de nacimiento:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>DNI/NIE (si tiene):</td><td>________________________________________________</td></tr></table>'
+    + '<h3>INFORMACION MEDICA RELEVANTE</h3>'
+    + '<table class="doc-table"><tr><td>Alergias o intolerancias:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Enfermedades cronicas:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Medicacion habitual:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Dosis y pauta:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Otras observaciones:</td><td>________________________________________________</td></tr></table>'
+    + '<h3>AUTORIZACION</h3>'
+    + '<p>El/la abajo firmante, en calidad de representante legal del menor, y al amparo del <strong>Art. 9.3 de la Ley 41/2002</strong> (consentimiento por representacion en menores de edad), <strong>AUTORIZA</strong> al personal del campamento a:</p>'
+    + '<h3>CONTACTO DE EMERGENCIA</h3>'
+    + '<table class="doc-table"><tr><td>Nombre del tutor/a:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Telefono principal:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Telefono alternativo:</td><td>________________________________________________</td></tr></table>'
+    + '<div class="firma-bloque"><div class="firma-lineas"><div class="firma-col"><p>Lugar y fecha: _____________________</p><p style="margin-top:2rem">Firma del tutor/a legal:</p><div class="firma-espacio"></div></div></div></div>';
+
+  cuerpos['actividades'] = '<div class=\"marco-legal\"><strong>Marco normativo:</strong> Ley Organica 1/1996, de 15 de enero, de Proteccion Juridica del Menor (Art. 2, interes superior del menor) &middot; Decreto 159/2007, de 31 de mayo, de la Junta de Andalucia, regulador de las actividades de tiempo libre en la naturaleza en Andalucia &middot; Art. 154 del Codigo Civil (ejercicio de la patria potestad) &middot; Real Decreto 1032/2017, habilitacion de monitores de tiempo libre.</div>'
+    + '<h3>DATOS DEL MENOR</h3>'
+    + '<table class="doc-table"><tr><td>Nombre y apellidos:</td><td>________________________________________________</td></tr>'
+    + '<tr><td>Fecha de nacimiento:</td><td>________________________________________________</td></tr></table>'
+    + '<h3>ACTIVIDADES DEL PROGRAMA</h3>'
+    + '<p>El programa incluye las siguientes actividades que requieren autorizacion expresa:</p>'
+    + '<ul><li><strong>Actividades acuaticas:</strong> banos en zona habilitada con supervision de monitores titulados.</li>'
+    + '<li><strong>Actividades deportivas:</strong> multideporte, juegos de equipo y actividades al aire libre.</li>'
+    + '<li><strong>Excursiones:</strong> salidas del recinto en grupo con monitores responsables.</li>'
+    + '<li><strong>Actividades nocturnas:</strong> veladas y actividades supervisadas en horario nocturno.</li>'
+    + '<li><strong>Talleres creativos:</strong> manualidades, teatro, musica y actividades artisticas.</li></ul>'
+    + '<h3>COMPROMISOS DEL CAMPAMENTO</h3>'
+    + '<p>El campamento garantiza supervision permanente de monitores titulados, cumplimiento de protocolos de seguridad y comunicacion inmediata con los tutores ante cualquier incidencia.</p>'
+    + '<h3>AUTORIZACION</h3>'
+    + '<p>El/la abajo firmante, tutor/a legal del menor arriba indicado, en ejercicio de la patria potestad conforme al <strong>Art. 154 del Codigo Civil</strong>, <strong>AUTORIZA EXPRESAMENTE</strong> la participacion del menor en todas las actividades descritas, asumiendo que el menor se compromete a respetar las normas de seguridad indicadas por los monitores.</p>'
+    + '<div class="firma-bloque"><div class="firma-lineas"><div class="firma-col"><p>Lugar y fecha: _____________________</p><p style="margin-top:2rem">Firma del tutor/a legal:</p><div class="firma-espacio"></div></div></div></div>';
+
+  cuerpos['normas'] = '<div class=\"marco-legal\"><strong>Marco normativo:</strong> Ley Organica 1/1996, de 15 de enero, de Proteccion Juridica del Menor, modificada por LO 8/2015 &middot; Ley Organica 1/2002, de 22 de marzo, reguladora del Derecho de Asociacion &middot; Decreto 159/2007 de la Junta de Andalucia sobre actividades de tiempo libre en la naturaleza.</div>'
+    + '<p style=\"font-style:italic;color:#555;margin-bottom:1.5rem\">'"Venga tu reino, hagase tu voluntad en la tierra como en el cielo" - Mateo 6:10</p>'
+    + '<h3>1. RESPETO Y CONVIVENCIA</h3>'
+    + '<p>Todos los acampantes se trataran con respeto y amabilidad. No se tolerara lenguaje ofensivo, burlas ni ninguna forma de acoso hacia companeros, monitores o personal.</p>'
+    + '<h3>2. OBEDIENCIA Y SEGURIDAD</h3>'
+    + '<p>Los acampantes seguiran las instrucciones de los monitores en todo momento. Las normas de seguridad son de obligado cumplimiento. No se permitira alejarse del grupo sin autorizacion.</p>'
+    + '<h3>3. CUIDADO DEL MATERIAL E INSTALACIONES</h3>'
+    + '<p>Cada acampante es responsable de sus pertenencias y del cuidado del material del campamento. Los desperfectos intencionados podran ser reclamados a los tutores.</p>'
+    + '<h3>4. DISPOSITIVOS ELECTRONICOS</h3>'
+    + '<p>El uso de moviles queda restringido a los momentos y zonas habilitados por la organizacion. El campamento no se responsabiliza de perdidas o roturas de dispositivos personales.</p>'
+    + '<h3>5. HORARIOS Y RUTINAS</h3>'
+    + '<p>Se respetaran los horarios de comidas, actividades, descanso y silencio nocturno. La puntualidad es parte del compromiso de convivencia.</p>'
+    + '<h3>6. ALIMENTACION</h3>'
+    + '<p>Se respetara el menu ofrecido. Las alergias e intolerancias deben comunicarse previamente en el formulario de inscripcion.</p>'
+    + '<h3>7. SALIDAS DEL RECINTO</h3>'
+    + '<p>Ningun acampante podra abandonar el recinto sin autorizacion expresa. Las recogidas anticipadas deben comunicarse y realizarse por personas autorizadas.</p>'
+    + '<h3>8. INCUMPLIMIENTO</h3>'
+    + '<p>El incumplimiento grave de las normas podra conllevar comunicacion a los tutores y, en casos extremos, salida anticipada sin derecho a devolucion.</p>'
+    + '<div class="firma-bloque"><p>El/la abajo firmante declara haber leido las normas y se compromete a trasladarlas al menor antes de su incorporacion.</p>'
+    + '<div class="firma-lineas"><div class="firma-col"><p>Lugar y fecha: _____________________</p><p style="margin-top:2rem">Firma del tutor/a legal:</p><div class="firma-espacio"></div></div>'
+    + '<div class="firma-col"><p>&nbsp;</p><p style="margin-top:2rem">Firma del acampante (mayor de 12 anos):</p><div class="firma-espacio"></div></div></div></div>';
+
+  var titulo = titulos[tipo];
+  var cuerpo = cuerpos[tipo];
+  if (!titulo || !cuerpo) return;
+
+  var html = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><title>' + titulo + '</title><style>'
+    + 'body{font-family:Georgia,serif;max-width:740px;margin:0 auto;padding:2.5rem;color:#111;font-size:13px;line-height:1.7}'
+    + '.topbar{background:#1B4332;color:white;padding:.75rem 1.5rem;margin:-2.5rem -2.5rem 2rem;display:flex;justify-content:space-between;align-items:center}'
+    + '.topbar span{font-size:.85rem}'
+    + '.topbar button{background:#C9A227;color:#1B4332;border:none;padding:.5rem 1.25rem;border-radius:4px;font-weight:bold;cursor:pointer;font-size:.85rem}'
+    + '.doc-header{text-align:center;border-bottom:3px solid #1B4332;padding-bottom:1.5rem;margin-bottom:2rem}'
+    + '.doc-logo{font-size:.82rem;font-weight:bold;letter-spacing:.1em;text-transform:uppercase;color:#1B4332;margin-bottom:.5rem}'
+    + '.doc-titulo{font-size:1.15rem;font-weight:bold;text-transform:uppercase;letter-spacing:.05em;margin:.5rem 0}'
+    + '.doc-subtitulo{font-size:.82rem;color:#555;font-style:italic}'
+    + 'h3{font-size:.88rem;text-transform:uppercase;letter-spacing:.08em;color:#1B4332;border-bottom:1px solid #ccc;padding-bottom:.3rem;margin:1.5rem 0 .75rem}'
+    + 'p{margin:.5rem 0}ul{margin:.5rem 0 .5rem 1.5rem}li{margin:.3rem 0}'
+    + '.doc-table{width:100%;border-collapse:collapse;margin:.5rem 0}'
+    + '.doc-table td{padding:.4rem .5rem;border-bottom:1px solid #eee;vertical-align:top}'
+    + '.doc-table td:first-child{font-weight:bold;white-space:nowrap;width:200px;color:#333}'
+    + '.firma-bloque{margin-top:2.5rem;border-top:2px solid #1B4332;padding-top:1.5rem}'
+    + '.firma-lineas{display:flex;gap:3rem;margin-top:1rem}'
+    + '.firma-col{flex:1}'
+    + '.firma-espacio{height:70px;border-bottom:1px solid #333;margin-top:.5rem}'
+    + '.doc-footer{text-align:center;margin-top:3rem;padding-top:1rem;border-top:1px solid #ccc;font-size:.75rem;color:#888;font-style:italic}'
+    + '.marco-legal{background:#f0f7f3;border-left:3px solid #1B4332;padding:.75rem 1rem;margin-bottom:1.5rem;font-size:.8rem;color:#444;line-height:1.65}'
+    + '@media print{.topbar{display:none}body{padding:1rem}@page{margin:1.5cm}}'
+    + '</style></head><body>'
+    + '<div class="topbar"><span>Imprime o guarda como PDF, rellena a mano y firma</span>'
+    + '<button onclick="window.print()">&#128438; Imprimir / Guardar PDF</button></div>'
+    + '<div class="doc-header">'
+    + '<div class="doc-logo">&#127958; Campamentos Infantiles Bahia de Cadiz &middot; Desde 1989</div>'
+    + '<div class="doc-titulo">' + titulo + '</div>'
+    + '<div class="doc-subtitulo">' + subtitulo + '</div>'
+    + '</div>'
+    + cuerpo
+    + '<div class="doc-footer">Campamentos Infantiles Bahia de Cadiz &middot; Venga tu Reino 2026 &middot; Tel: 654 636 331</div>'
+    + '</body></html>';
+
+  var blob = new Blob([html], {type: 'text/html;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(function() { URL.revokeObjectURL(url); }, 2000);
+}
+
+renderNews();
+</script>
+</body>
+</html>
